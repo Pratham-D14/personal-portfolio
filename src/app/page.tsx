@@ -1,4 +1,6 @@
 import Aboutme from "@/components/Aboutme";
+import Contact from "@/components/Contact";
+import Education from "@/components/Education";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import DataProvider from "@/contexts/DataProvider";
@@ -12,6 +14,8 @@ export default function Home() {
         <main>
           <Hero />
           <Aboutme />
+          <Education />
+          <Contact />
         </main>
         {/* <main>
         <Hero />

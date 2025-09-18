@@ -61,6 +61,10 @@ body {
   body {
     @apply bg-gray-50 text-gray-900;
   }
+
+  :root {
+    --muted-foreground: 0 0% 45.1%;
+  }
 }
 
 @layer components {

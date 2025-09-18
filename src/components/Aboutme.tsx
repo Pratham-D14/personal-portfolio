@@ -2,8 +2,10 @@
 
 import DataContext from "@/contexts/DataContext";
 import { useContext, useRef } from "react";
+import { Code, Palette, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import { Card, CardContent } from "./ui/card";
 
 const About = () => {
   const ref = useRef(null);
@@ -11,8 +13,30 @@ const About = () => {
   const { data } = useContext(DataContext);
 
   const { frontendSkills, backendSkills, softSkills } = data.skills;
-
   const skills = [...frontendSkills, ...backendSkills, ...softSkills];
+
+  const features = [
+    {
+      icon: Code,
+      title: "Clean Code",
+      description: "Writing maintainable, scalable code with best practices",
+    },
+    {
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "Creating beautiful, intuitive user interfaces",
+    },
+    {
+      icon: Zap,
+      title: "Performance",
+      description: "Optimizing applications for speed and efficiency",
+    },
+    {
+      icon: Users,
+      title: "Collaboration",
+      description: "Working effectively in agile development teams",
+    },
+  ];
   return (
     <section
       id="about"
@@ -89,6 +113,32 @@ const About = () => {
               ))}
             </div>
           </motion.div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-2 mt-10 border-gray-200">
+                <CardContent className="p-6 text-center">
+                  <motion.div
+                    className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg mb-4"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <feature.icon className="w-6 h-6 text-blue-600" />
+                  </motion.div>
+                  <h3 className="text-lg font-semibold mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

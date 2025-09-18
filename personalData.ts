@@ -47,31 +47,29 @@ export const personalInfo: DataType = {
   education: [
     {
       degree: "Bachelor of Technology in Computer Science",
-      university: "XYZ University",
-      starting: "08-2019",
-      ending: "05-2023",
+      university: "NK College, Mumbai University",
+      starting: "2021",
+      ending: "2024",
       description:
         "I pursued my undergraduate degree in Computer Science, focusing on web technologies, algorithms, and systems programming.",
-      subjects: [
+      courses: [
         "Data Structures",
         "Algorithms",
         "Database Management Systems",
         "Operating Systems",
         "Software Engineering",
       ],
-      gpa: "3.85/4.0",
+      gpa: "3.3 / 4.0",
+      location: "Mumbai",
     },
   ],
   certification: [
     {
-      name: "Node.js Certified Developer",
-      provider: "Node University",
-      link: "https://www.nodeuniversity.com/certificate/12345",
-    },
-    {
-      name: "Docker Essentials",
-      provider: "Docker Academy",
-      link: "https://www.dockeracademy.com/certificate/abc123",
+      name: "React.js Certified Developer",
+      provider: "Geeks for Geeks",
+      link: "https://www.geeksforgeeks.org/certificate/1cac32f39715921b907f441c60d23282",
+      date: "2025",
+      icon: "🚀",
     },
   ],
   projects: [

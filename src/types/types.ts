@@ -18,13 +18,16 @@ export type DataType = {
     starting: string;
     ending: string;
     description: string;
-    subjects: string[];
+    courses: string[];
     gpa: string;
+    location: string;
   }>;
   certification: Array<{
     name: string;
     provider: string;
     link: string;
+    date: string;
+    icon: string;
   }>;
   projects: Array<{
     title: string;
