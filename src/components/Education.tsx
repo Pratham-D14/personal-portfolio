@@ -40,6 +40,7 @@ export default function Education() {
   //   },
   // ];
 
+  // Design 1
   // return (
   //   <section id="education" className="py-20 bg-white">
   //     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,6 +171,7 @@ export default function Education() {
   //   </section>
   // );
 
+  // Design 2
   return (
     <section id="education" className="py-20 bg-gray-50 text-black">
       <div className="container mx-auto px-6">

@@ -1,3 +1,5 @@
+import { JSX, ReactNode } from "react";
+
 export type DataType = {
   skills: {
     frontendSkills: string[];
@@ -34,5 +36,10 @@ export type DataType = {
     description: string;
     technologiesUsed: string[];
     githubLink: string;
+  }>;
+  interest: Array<{
+    icon: JSX.Element;
+    title: string;
+    description: string;
   }>;
 };

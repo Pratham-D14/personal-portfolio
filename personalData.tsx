@@ -1,4 +1,5 @@
 import type { DataType } from "@/types/types";
+import { Camera, Music, Plane, Book, Code, Coffee } from "lucide-react";
 
 export const personalInfo: DataType = {
   skills: {
@@ -43,6 +44,23 @@ export const personalInfo: DataType = {
         "AEM",
       ],
     },
+    {
+      companyName: "LevelEdge Technologies",
+      starting: "04-2023",
+      ending: "09-2023",
+      position: "Frontend DeveloperIntern",
+      roleDescription:
+        "As a Junior Backend Developer at DEPT, I work on building robust backend systems, creating RESTful APIs, and ensuring seamless integration with frontend technologies. I focus on optimizing performance, writing efficient SQL queries, and managing databases.",
+      skillsUsed: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "AEM",
+      ],
+    },
   ],
   education: [
     {
@@ -67,7 +85,7 @@ export const personalInfo: DataType = {
     {
       name: "React.js Certified Developer",
       provider: "Geeks for Geeks",
-      link: "https://www.geeksforgeeks.org/certificate/1cac32f39715921b907f441c60d23282",
+      link: "https://drive.google.com/file/d/1fU4_qYqKjYIJOf0RmEm622BPQG0DcHFI/view?usp=sharing",
       date: "2025",
       icon: "🚀",
     },
@@ -86,6 +104,44 @@ export const personalInfo: DataType = {
         "Developed a real-time chat application using WebSockets (Socket.io), Express.js, and MongoDB. Integrated real-time message notifications.",
       technologiesUsed: ["Node.js", "Express.js", "Socket.io", "MongoDB"],
       githubLink: "https://github.com/username/real-time-chat",
+    },
+  ],
+  interest: [
+    {
+      icon: <Code className="w-8 h-8" />,
+      title: "Open Source",
+      description:
+        "Contributing to open source projects and maintaining several repositories on GitHub.",
+    },
+    {
+      icon: <Camera className="w-8 h-8" />,
+      title: "Photography",
+      description:
+        "Capturing moments through landscape and street photography during travels.",
+    },
+    {
+      icon: <Music className="w-8 h-8" />,
+      title: "Music Production",
+      description:
+        "Creating electronic music and experimenting with sound design in my spare time.",
+    },
+    {
+      icon: <Plane className="w-8 h-8" />,
+      title: "Travel",
+      description:
+        "Exploring new cultures and technologies around the world, visited 25+ countries.",
+    },
+    {
+      icon: <Book className="w-8 h-8" />,
+      title: "Learning",
+      description:
+        "Always learning new technologies, currently exploring AI/ML and blockchain development.",
+    },
+    {
+      icon: <Coffee className="w-8 h-8" />,
+      title: "Coffee Brewing",
+      description:
+        "Passionate about specialty coffee and perfecting the art of manual brewing methods.",
     },
   ],
 };
