@@ -1,17 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Badge } from "./ui/badge";
 import { GraduationCap, Award, Calendar } from "lucide-react";
 import { useContext } from "react";
 import DataContext from "@/contexts/DataContext";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card"; // Uncomment For using 1st Return Statement
+// import {
+//   Card,
+//   CardContent,
+//   CardDescription,
+//   CardHeader,
+//   CardTitle,
+// } from "./ui/card"; // Uncomment For using 1st Return Statement
 import Link from "next/link";
 
 export default function Education() {

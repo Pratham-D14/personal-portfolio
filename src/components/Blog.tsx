@@ -1,19 +1,14 @@
+"use client";
+import { motion } from "framer-motion";
 import {
   Calendar,
   Clock,
   ArrowRight,
-  Eye,
-  MessageCircle,
-  Tag,
   TrendingUp,
   BookOpen,
   Share2,
-  Heart,
   Bookmark,
-  Filter,
   Search,
-  User,
-  ChevronDown,
 } from "lucide-react";
 
 export default function Blog() {
@@ -36,7 +31,7 @@ export default function Blog() {
       author: {
         name: "Pratam Darji",
         avatar: "PD",
-        role: "Senior Developer",
+        role: "Junior Developer",
       },
     },
     {
@@ -56,7 +51,7 @@ export default function Blog() {
       author: {
         name: "Pratam Darji",
         avatar: "PD",
-        role: "Senior Developer",
+        role: "Junior Developer",
       },
     },
     {
@@ -76,7 +71,7 @@ export default function Blog() {
       author: {
         name: "Pratam Darji",
         avatar: "PD",
-        role: "Senior Developer",
+        role: "Junior Developer",
       },
     },
     {
@@ -96,7 +91,7 @@ export default function Blog() {
       author: {
         name: "Pratam Darji",
         avatar: "PD",
-        role: "Senior Developer",
+        role: "Junior Developer",
       },
     },
     {
@@ -117,7 +112,7 @@ export default function Blog() {
       author: {
         name: "Pratam Darji",
         avatar: "PD",
-        role: "Senior Developer",
+        role: "Junior Developer",
       },
     },
     {
@@ -138,7 +133,7 @@ export default function Blog() {
       author: {
         name: "Pratam Darji",
         avatar: "PD",
-        role: "Senior Developer",
+        role: "Junior Developer",
       },
     },
   ];
@@ -199,26 +194,33 @@ export default function Blog() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-white/80 dark:bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-6">
-              <BookOpen className="w-6 h-6 text-blue-600" />
-              <span className="text-lg font-semibol dark:text-black">
-                Technical Blog
-              </span>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-3 bg-white/80 dark:bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-6">
+                <BookOpen className="w-6 h-6 text-blue-600" />
+                <span className="text-lg font-semibol dark:text-black">
+                  Technical Blog
+                </span>
+              </div>
+
+              <h2 className="text-5xl md:text-7xl font-bold mb-6 text-black">
+                Latest{" "}
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Insights
+                </span>
+              </h2>
+
+              <p className="text-xl dark:text-gray-800 max-w-3xl mx-auto leading-relaxed">
+                Sharing knowledge, tutorials, and insights on modern web
+                development, emerging technologies, and industry best practices
+              </p>
             </div>
-
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-black">
-              Latest{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Insights
-              </span>
-            </h2>
-
-            <p className="text-xl dark:text-gray-800 max-w-3xl mx-auto leading-relaxed">
-              Sharing knowledge, tutorials, and insights on modern web
-              development, emerging technologies, and industry best practices
-            </p>
-          </div>
+          </motion.div>
 
           {/* Blog Stats Dashboard */}
           {/* <div className="grid md:grid-cols-4 gap-6 mb-16">
@@ -234,64 +236,74 @@ export default function Blog() {
           </div> */}
 
           {/* Search and Filter Bar */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg mb-12">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-800" />
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
-                />
-              </div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+          >
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg mb-12">
+              <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+                {/* Search */}
+                <div className="relative flex-1 max-w-md">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-800" />
+                  <input
+                    type="text"
+                    placeholder="Search articles..."
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+                  />
+                </div>
 
-              {/* Categories */}
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category, index) => (
-                  <button
-                    key={index}
-                    className={`px-4 py-2 rounded-xl font-medium transition-all duration-200 cursor-pointer ${
-                      index === 0
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                        : "bg-gray-100 text-gray-700 dark:text-gray-800 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+                {/* Categories */}
+                <div className="flex flex-wrap gap-2">
+                  {categories.map((category, index) => (
+                    <button
+                      key={index}
+                      className={`px-4 py-2 rounded-xl font-medium transition-all duration-200 cursor-pointer ${
+                        index === 0
+                          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                          : "bg-gray-100 text-gray-700 dark:text-gray-800 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-
+          </motion.div>
           {/* Featured Article */}
           {blogPosts
             .filter((post) => post.featured)
             .map((post, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: -60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl mb-16 hover:shadow-3xl transition-all duration-500 group"
               >
-                <div className="grid lg:grid-cols-2 gap-0">
-                  {/* Image Section */}
-                  <div className="relative h-80 lg:h-auto overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl mb-16 hover:shadow-3xl transition-all duration-500 group">
+                  <div className="grid lg:grid-cols-2 gap-0">
+                    {/* Image Section */}
+                    <div className="relative h-80 lg:h-auto overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-                    {/* Featured Badge */}
-                    <div className="absolute top-6 left-6">
-                      <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full font-bold shadow-lg">
-                        <TrendingUp className="w-4 h-4" />
-                        Latest Article
+                      {/* Featured Badge */}
+                      <div className="absolute top-6 left-6">
+                        <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full font-bold shadow-lg">
+                          <TrendingUp className="w-4 h-4" />
+                          Latest Article
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Stats Overlay */}
-                    {/* <div className="absolute bottom-6 left-6 right-6">
+                      {/* Stats Overlay */}
+                      {/* <div className="absolute bottom-6 left-6 right-6">
                       <div className="flex items-center justify-between text-white">
                         <div className="flex items-center gap-4">
                           <div className="flex items-center gap-2 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -320,129 +332,140 @@ export default function Blog() {
                         </div>
                       </div>
                     </div> */}
-                  </div>
+                    </div>
 
-                  {/* Content Section */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    {/* Meta Info */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
-                          {post.author.avatar}
-                        </div>
-                        <div>
-                          <div className="font-semibold text-gray-900 dark:text-black">
-                            {post.author.name}
+                    {/* Content Section */}
+                    <div className="p-8 lg:p-12 flex flex-col justify-center">
+                      {/* Meta Info */}
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                            {post.author.avatar}
                           </div>
-                          <div className="text-sm text-gray-800 dark:text-gray-800">
-                            {post.author.role}
+                          <div>
+                            <div className="font-semibold text-gray-900 dark:text-black">
+                              {post.author.name}
+                            </div>
+                            <div className="text-sm text-gray-800 dark:text-gray-800">
+                              {post.author.role}
+                            </div>
                           </div>
                         </div>
+                        <div className="h-4 w-px bg-gray-300 "></div>
+                        <div className="flex items-center text-sm text-gray-500 dark:text-gray-800">
+                          <Calendar className="w-4 h-4 mr-2" />
+                          {new Date(post.date).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </div>
+                        <div className="h-4 w-px bg-gray-300 "></div>
+                        <div className="flex items-center text-sm text-gray-500 dark:text-gray-800">
+                          <Clock className="w-4 h-4 mr-2" />
+                          {post.readTime}
+                        </div>
                       </div>
-                      <div className="h-4 w-px bg-gray-300 "></div>
-                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-800">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        {new Date(post.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </div>
-                      <div className="h-4 w-px bg-gray-300 "></div>
-                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-800">
-                        <Clock className="w-4 h-4 mr-2" />
-                        {post.readTime}
-                      </div>
-                    </div>
 
-                    {/* Category */}
-                    <div className="mb-4">
-                      <span className="bg-blue-100 dark:bg-blue-300/70 text-blue-700 dark:text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
-                        {post.category}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-3xl md:text-4xl font-bold mb-6  dark:text-blue-600 transition-all duration-300">
-                      {post.title}
-                    </h3>
-
-                    {/* Excerpt */}
-                    <p className="text-gray-600 dark:text-gray-800 mb-8 text-lg leading-relaxed">
-                      {post.excerpt}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {post.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="px-3 py-1 bg-gray-100 dark:bg-blue-300/70 text-gray-700 dark:text-blue-800 text-sm rounded-full hover:bg-blue-100 hover:text-blue-800 transition-colors cursor-pointer"
-                        >
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex items-center gap-4">
-                      <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl hover:from-blue-700 hover:to-purple-700 font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg group/btn cursor-pointer">
-                        Read Full Article
-                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
-
-                      <div className="flex items-center gap-2">
-                        <button className="p-3 bg-gray-100 dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300 rounded-xl transition-colors cursor-pointer">
-                          <Share2 className="w-5 h-5 text-gray-600 dark:text-gray-800" />
-                        </button>
-                        <button className="p-3 bg-gray-100 dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300 rounded-xl transition-colors cursor-pointer">
-                          <Bookmark className="w-5 h-5 text-gray-600 dark:text-gray-800" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-          {/* Recent Articles Grid */}
-          <div className="mb-16">
-            <div className="flex items-center justify-between mb-8">
-              <h3 className="text-3xl font-bold text-gray-900 dark:text-black">
-                Recent Articles
-              </h3>
-              {/* <button className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
-                View All
-                <ChevronDown className="w-4 h-4" />
-              </button> */}
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts
-                .filter((post) => !post.featured)
-                .map((post, index) => (
-                  <article
-                    key={index}
-                    className="group bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3"
-                  >
-                    {/* Image */}
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-
-                      {/* Category Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-white/90 text-gray-800 dark:text-gray-800 px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
+                      {/* Category */}
+                      <div className="mb-4">
+                        <span className="bg-blue-100 dark:bg-blue-300/70 text-blue-700 dark:text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
                           {post.category}
                         </span>
                       </div>
 
-                      {/* Difficulty Badge */}
-                      {/* <div className="absolute top-4 right-4">
+                      {/* Title */}
+                      <h3 className="text-3xl md:text-4xl font-bold mb-6  dark:text-blue-600 transition-all duration-300">
+                        {post.title}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-gray-600 dark:text-gray-800 mb-8 text-lg leading-relaxed">
+                        {post.excerpt}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-8">
+                        {post.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-3 py-1 bg-gray-100 dark:bg-blue-300/70 text-gray-700 dark:text-blue-800 text-sm rounded-full hover:bg-blue-100 hover:text-blue-800 transition-colors cursor-pointer"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Actions */}
+                      <div className="flex items-center gap-4">
+                        <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl hover:from-blue-700 hover:to-purple-700 font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg group/btn cursor-pointer">
+                          Read Full Article
+                          <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+
+                        <div className="flex items-center gap-2">
+                          <button className="p-3 bg-gray-100 dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300 rounded-xl transition-colors cursor-pointer">
+                            <Share2 className="w-5 h-5 text-gray-600 dark:text-gray-800" />
+                          </button>
+                          <button className="p-3 bg-gray-100 dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300 rounded-xl transition-colors cursor-pointer">
+                            <Bookmark className="w-5 h-5 text-gray-600 dark:text-gray-800" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+
+          {/* Recent Articles Grid */}
+          <div className="mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+            >
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-black">
+                  Recent Articles
+                </h3>
+                {/* <button className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
+                View All
+                <ChevronDown className="w-4 h-4" />
+              </button> */}
+              </div>
+            </motion.div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogPosts
+                .filter((post) => !post.featured)
+                .map((post, index) => (
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.9 }}
+                    key={index}
+                  >
+                    <article className="group bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3">
+                      {/* Image */}
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+
+                        {/* Category Badge */}
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-white/90 text-gray-800 dark:text-gray-800 px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
+                            {post.category}
+                          </span>
+                        </div>
+
+                        {/* Difficulty Badge */}
+                        {/* <div className="absolute top-4 right-4">
                         <span
                           className={`px-2 py-1 rounded-full text-xs font-medium text-white ${
                             post.difficulty === "Beginner"
@@ -456,8 +479,8 @@ export default function Blog() {
                         </span>
                       </div> */}
 
-                      {/* Stats */}
-                      {/* <div className="absolute bottom-4 right-4 flex items-center gap-2">
+                        {/* Stats */}
+                        {/* <div className="absolute bottom-4 right-4 flex items-center gap-2">
                         <div className="flex items-center gap-1 bg-black/70 text-white px-2 py-1 rounded-full text-xs backdrop-blur-sm">
                           <Eye className="w-3 h-3" />
                           {post.views}
@@ -467,70 +490,71 @@ export default function Blog() {
                           {post.likes}
                         </div>
                       </div> */}
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6">
-                      {/* Meta */}
-                      <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-800 mb-3">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          {new Date(post.date).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                          })}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" />
-                          {post.readTime}
-                        </div>
                       </div>
 
-                      {/* Title */}
-                      <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-blue-600 group-hover:text-blue-800 transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-
-                      {/* Excerpt */}
-                      <p className="text-gray-600 dark:text-gray-600 mb-4 line-clamp-3 leading-relaxed">
-                        {post.excerpt}
-                      </p>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {post.tags.slice(0, 3).map((tag, tagIndex) => (
-                          <span
-                            key={tagIndex}
-                            className="px-2 py-1 bg-gray-200 text-gray-700 dark:text-gray-800 text-xs rounded-full"
-                          >
-                            #{tag}
-                          </span>
-                        ))}
-                        {post.tags.length > 3 && (
-                          <span className="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded-full">
-                            +{post.tags.length - 3}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Footer */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                            {post.author.avatar}
+                      {/* Content */}
+                      <div className="p-6">
+                        {/* Meta */}
+                        <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-800 mb-3">
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-4 h-4" />
+                            {new Date(post.date).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                            })}
                           </div>
-                          <span className="text-m font-medium text-gray-700 dark:text-gray-800">
-                            {post.author.name}
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" />
+                            {post.readTime}
+                          </div>
                         </div>
 
-                        <button className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors group/btn text-sm cursor-pointer">
-                          Read More
-                          <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                        </button>
+                        {/* Title */}
+                        <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-blue-600 group-hover:text-blue-800 transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+
+                        {/* Excerpt */}
+                        <p className="text-gray-600 dark:text-gray-600 mb-4 line-clamp-3 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {post.tags.slice(0, 3).map((tag, tagIndex) => (
+                            <span
+                              key={tagIndex}
+                              className="px-2 py-1 bg-gray-200 text-gray-700 dark:text-gray-800 text-xs rounded-full"
+                            >
+                              #{tag}
+                            </span>
+                          ))}
+                          {post.tags.length > 3 && (
+                            <span className="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded-full">
+                              +{post.tags.length - 3}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Footer */}
+                        <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                          <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                              {post.author.avatar}
+                            </div>
+                            <span className="text-m font-medium text-gray-700 dark:text-gray-800">
+                              {post.author.name}
+                            </span>
+                          </div>
+
+                          <button className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors group/btn text-sm cursor-pointer">
+                            Read More
+                            <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+                  </motion.div>
                 ))}
             </div>
           </div>
