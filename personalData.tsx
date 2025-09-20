@@ -1,5 +1,16 @@
 import type { DataType } from "@/types/types";
-import { Camera, Music, Plane, Book, Code, Coffee } from "lucide-react";
+import {
+  Camera,
+  Music,
+  Plane,
+  Book,
+  Code,
+  Coffee,
+  Cpu,
+  BarChart3,
+  Shield,
+  Smartphone,
+} from "lucide-react";
 
 export const personalInfo: DataType = {
   skills: {
@@ -114,18 +125,152 @@ export const personalInfo: DataType = {
   ],
   projects: [
     {
-      title: "E-commerce API",
+      id: 1,
+      title: "E-commerce App",
+      subTitle: "FullStack Web Application",
       description:
         "Built a full-fledged e-commerce API with Node.js and MongoDB, implementing user authentication, product management, and order processing.",
-      technologiesUsed: ["Node.js", "Express.js", "MongoDB", "JWT", "Docker"],
+      image: "https://images.pexels.com/photos/267371/pexels-photo-267371.jpeg",
+      technologiesUsed: [
+        { name: "React", icon: "⚛️", color: "from-blue-400 to-blue-600" },
+        { name: "Node.js", icon: "🟢", color: "from-green-400 to-green-600" },
+        {
+          name: "MongoDB",
+          icon: "🍃",
+          color: "from-emerald-400 to-emerald-600",
+        },
+        { name: "TypeScript", icon: "📘", color: "from-blue-500 to-blue-700" },
+        { name: "Stripe", icon: "💳", color: "from-purple-400 to-purple-600" },
+        { name: "AWS", icon: "☁️", color: "from-orange-400 to-orange-600" },
+        { name: "Redis", icon: "🔴", color: "from-red-400 to-red-600" },
+        { name: "OpenAI", icon: "🤖", color: "from-green-400 to-teal-500" },
+        { name: "Docker", icon: "🐳", color: "from-blue-400 to-cyan-500" },
+      ],
       githubLink: "https://github.com/username/e-commerce-api",
+      liveLink: "",
+      category: "FullStack",
+      highlights: [
+        {
+          title: "AI Recommendations",
+          description: "Machine learning powered product suggestions",
+          icon: <Cpu className="w-5 h-5" />,
+        },
+        {
+          title: "Real-time Analytics",
+          description: "Live dashboard with business insights",
+          icon: <BarChart3 className="w-5 h-5" />,
+        },
+        {
+          title: "Payment Gateway",
+          description: "Secure multi-payment integration",
+          icon: <Shield className="w-5 h-5" />,
+        },
+        {
+          title: "Mobile Optimized",
+          description: "Progressive web app with offline support",
+          icon: <Smartphone className="w-5 h-5" />,
+        },
+      ],
+      gradient: "from-blue-600 via-purple-600 to-pink-600",
     },
     {
+      id: 2,
       title: "Real-Time Chat Application",
+      subTitle: "",
       description:
         "Developed a real-time chat application using WebSockets (Socket.io), Express.js, and MongoDB. Integrated real-time message notifications.",
-      technologiesUsed: ["Node.js", "Express.js", "Socket.io", "MongoDB"],
+      image:
+        "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg",
+      technologiesUsed: [
+        { name: "React", icon: "⚛️", color: "from-blue-400 to-blue-600" },
+        { name: "Node.js", icon: "🟢", color: "from-green-400 to-green-600" },
+        {
+          name: "MongoDB",
+          icon: "🍃",
+          color: "from-emerald-400 to-emerald-600",
+        },
+        { name: "TypeScript", icon: "📘", color: "from-blue-500 to-blue-700" },
+        { name: "Stripe", icon: "💳", color: "from-purple-400 to-purple-600" },
+        { name: "AWS", icon: "☁️", color: "from-orange-400 to-orange-600" },
+        { name: "Redis", icon: "🔴", color: "from-red-400 to-red-600" },
+        { name: "OpenAI", icon: "🤖", color: "from-green-400 to-teal-500" },
+        { name: "Docker", icon: "🐳", color: "from-blue-400 to-cyan-500" },
+      ],
       githubLink: "https://github.com/username/real-time-chat",
+      liveLink: "",
+      category: "",
+      highlights: [
+        {
+          title: "AI Recommendations",
+          description: "Machine learning powered product suggestions",
+          icon: <Cpu className="w-5 h-5" />,
+        },
+        {
+          title: "Real-time Analytics",
+          description: "Live dashboard with business insights",
+          icon: <BarChart3 className="w-5 h-5" />,
+        },
+        {
+          title: "Payment Gateway",
+          description: "Secure multi-payment integration",
+          icon: <Shield className="w-5 h-5" />,
+        },
+        {
+          title: "Mobile Optimized",
+          description: "Progressive web app with offline support",
+          icon: <Smartphone className="w-5 h-5" />,
+        },
+      ],
+      gradient: "from-emerald-600 via-teal-600 to-cyan-600",
+    },
+    {
+      id: 2,
+      title: "Real-Time Chat Application",
+      subTitle: "",
+      description:
+        "Developed a real-time chat application using WebSockets (Socket.io), Express.js, and MongoDB. Integrated real-time message notifications.",
+      image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg",
+      technologiesUsed: [
+        { name: "React", icon: "⚛️", color: "from-blue-400 to-blue-600" },
+        { name: "Node.js", icon: "🟢", color: "from-green-400 to-green-600" },
+        {
+          name: "MongoDB",
+          icon: "🍃",
+          color: "from-emerald-400 to-emerald-600",
+        },
+        { name: "TypeScript", icon: "📘", color: "from-blue-500 to-blue-700" },
+        { name: "Stripe", icon: "💳", color: "from-purple-400 to-purple-600" },
+        { name: "AWS", icon: "☁️", color: "from-orange-400 to-orange-600" },
+        { name: "Redis", icon: "🔴", color: "from-red-400 to-red-600" },
+        { name: "OpenAI", icon: "🤖", color: "from-green-400 to-teal-500" },
+        { name: "Docker", icon: "🐳", color: "from-blue-400 to-cyan-500" },
+      ],
+      githubLink: "https://github.com/username/real-time-chat",
+      liveLink: "",
+      category: "",
+      highlights: [
+        {
+          title: "AI Recommendations",
+          description: "Machine learning powered product suggestions",
+          icon: <Cpu className="w-5 h-5" />,
+        },
+        {
+          title: "Real-time Analytics",
+          description: "Live dashboard with business insights",
+          icon: <BarChart3 className="w-5 h-5" />,
+        },
+        {
+          title: "Payment Gateway",
+          description: "Secure multi-payment integration",
+          icon: <Shield className="w-5 h-5" />,
+        },
+        {
+          title: "Mobile Optimized",
+          description: "Progressive web app with offline support",
+          icon: <Smartphone className="w-5 h-5" />,
+        },
+      ],
+      gradient: "from-emerald-600 via-teal-600 to-cyan-600",
     },
   ],
   interest: [

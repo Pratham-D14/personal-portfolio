@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.8 }}
       >
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 items-end"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 items-end text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -29,13 +29,13 @@ const Hero: React.FC = () => {
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
+          className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Full-Stack Software Developer passionate about creating innovative web
-          solutions and bringing ideas to life through clean, efficient code.
+          Software Developer passionate about creating innovative web solutions
+          and bringing ideas to life through clean, efficient code.
         </motion.p>
       </motion.div>
 

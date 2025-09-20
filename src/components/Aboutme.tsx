@@ -23,7 +23,7 @@ const About = () => {
     },
     {
       icon: Palette,
-      title: "UI/UX Design",
+      title: "UI/UX",
       description: "Creating beautiful, intuitive user interfaces",
     },
     {

@@ -6,6 +6,7 @@ import Experience from "@/components/Experience";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Interests from "@/components/Interests";
+import Projects from "@/components/Project";
 import DataProvider from "@/contexts/DataProvider";
 import Image from "next/image";
 
@@ -20,6 +21,7 @@ export default function Home() {
           <Education />
           <Experience />
           {/* <Blog /> */}
+          <Projects />
           <Interests />
           <Contact />
         </main>

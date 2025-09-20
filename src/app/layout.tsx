@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pratham Darji",
+  title: "Pratham Darji - Software Developer",
   description: "Personal Portfolio Website",
 };
 

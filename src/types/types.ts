@@ -1,5 +1,17 @@
 import { JSX, ReactNode } from "react";
 
+interface technology {
+  name: string;
+  icon: string;
+  color: string;
+}
+
+interface highlight {
+  title: string;
+  description: string;
+  icon: JSX.Element;
+}
+
 export type DataType = {
   skills: {
     frontendSkills: string[];
@@ -38,10 +50,17 @@ export type DataType = {
     icon: string;
   }>;
   projects: Array<{
+    id: number;
     title: string;
+    subTitle: string;
     description: string;
-    technologiesUsed: string[];
+    image: string;
+    technologiesUsed: technology[];
     githubLink: string;
+    liveLink: string;
+    category: string;
+    highlights: highlight[];
+    gradient: string;
   }>;
   interest: Array<{
     icon: JSX.Element;
