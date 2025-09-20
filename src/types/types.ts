@@ -13,6 +13,12 @@ export type DataType = {
     position: string;
     roleDescription: string;
     skillsUsed: string[];
+    gradient: string;
+    bgGradient: string;
+    companyLogo: string;
+    location: string;
+    type: string;
+    responsibilities: string[];
   }>;
   education: Array<{
     degree: string;

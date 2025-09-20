@@ -30,7 +30,8 @@ body {
   white-space: nowrap;
   display: inline-block; /* Prevents full width */
   border-right: 0.15em solid blueviolet;
-  animation: typing 2.8s steps(26, end) forwards,
+  animation:
+    typing 2.8s steps(26, end) forwards,
     /* 12 steps for 12 characters */ blink-caret 0.75s step-end 2 2.3s forwards;
 }
 

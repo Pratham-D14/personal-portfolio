@@ -2,6 +2,7 @@ import Aboutme from "@/components/Aboutme";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Education from "@/components/Education";
+import Experience from "@/components/Experience";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Interests from "@/components/Interests";
@@ -17,18 +18,11 @@ export default function Home() {
           <Hero />
           <Aboutme />
           <Education />
-          <Blog />
+          <Experience />
+          {/* <Blog /> */}
           <Interests />
           <Contact />
         </main>
-        {/* <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <Interests />
-        <Contact />
-        </main> */}
         {/* <Footer /> */}
       </div>
     </DataProvider>
