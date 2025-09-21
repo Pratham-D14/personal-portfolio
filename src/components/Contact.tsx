@@ -13,6 +13,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Darumadrop_One } from "next/font/google";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ export default function Contact() {
   });
 
   const handleSubmit = (e: React.FormEvent) => {
+    let displayMessage = document.getElementById("mail-message");
     e.preventDefault();
     // // Handle form submission
     fetch("/api/send-mail", {
@@ -37,7 +39,7 @@ export default function Contact() {
         return res.json();
       })
       .then((data) => {
-        // Optionally handle success (e.g., show a message)
+        // Optionally handle success (e.g., show a message
         console.log("Mail sent successfully:", data);
       })
       .catch((err) => {
@@ -206,6 +208,9 @@ export default function Contact() {
                       className="bg-white text-black text-xl border-gray-300"
                       required
                     />
+                  </motion.div>
+                  <motion.div>
+                    <p id="mail-message hide"></p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}

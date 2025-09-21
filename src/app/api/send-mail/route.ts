@@ -1,62 +1,48 @@
-import { EmailTemplate } from "@/components/EmailTemplate";
-// import { EmailTemplate } from '../../../components/EmailTemplate';
-import { Resend } from "resend";
+import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const nodemailer = require("nodemailer");
+export async function POST(request: Request, res: Response) {
+  const { name, email, message, subject } = await request.json();
 
-export async function POST(request: Request) {
+  if (!name || !email || !message) {
+    return NextResponse.json(
+      { error: "All fields are required" },
+      { status: 400 }
+    );
+  }
   try {
-    const { name, email, message, subject } = await request.json();
-
-    const { data, error } = await resend.emails.send({
-      from: "Acme <site@pratham.porfolio>",
-      to: ["pratham14104@gmail.com"],
-      subject: subject,
-      react: EmailTemplate({ name, email, message }),
+    // Create transporter (Gmail example, but works with any SMTP)
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER, // your email
+        pass: process.env.MY_EMAIL_APP_PASSWORD, // app password
+      },
+      tls: {
+        rejectUnauthorized: false, // <--- add this line
+      },
     });
-
-    if (error) {
-      console.log("inside error: ", error);
-      return Response.json({ error }, { status: 500 });
-    }
-
-    return Response.json(data);
+    // Mail options
+    let mailOptions = {
+      from: email,
+      to: process.env.EMAIL_USER, // your email to receive messages
+      subject: `New Contact from ${name}`,
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Message: ${message}
+      `,
+    };
+    await transporter.sendMail(mailOptions);
+    return NextResponse.json({
+      success: true,
+      message: "Email sent successfully",
+    });
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    console.error(error);
+    return NextResponse.json(
+      { error: "Email could not be sent" },
+      { status: 500 }
+    );
   }
 }
-
-// import { NextResponse } from "next/server";
-// import { Resend } from "resend";
-
-// export const runtime = "nodejs";
-
-// export async function POST(request: Request) {
-//   const resend = new Resend(process.env.RESEND_API_KEY);
-//   try {
-//     const { name, email, message, subject } = await request.json();
-//     console.log("data: ", name, email, subject, message);
-//     const { data, error } = await resend.emails.send({
-//       from: "Acme <pratham.porfolio@resend.dev>",
-//       to: ["pratham14041@gmail.com"],
-//       subject: subject,
-//       react: EmailTemplate({ name, email, message }),
-//     });
-
-//     console.log("wait over");
-
-//     // Error
-//     if (error) {
-//       console.log("inside error: ", error);
-//       return NextResponse.json({ error }, { status: 500 });
-//     }
-
-//     // Success
-//     console.log("just before sending response");
-//     return NextResponse.json({ status: "Sucess", data });
-//   } catch (error) {
-//     console.error("Error sending mail:", error);
-
-//     return NextResponse.json({ error }, { status: 500 });
-//   }
-// }

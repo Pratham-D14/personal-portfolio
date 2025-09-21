@@ -175,7 +175,7 @@ export const personalInfo: DataType = {
     },
     {
       id: 2,
-      title: "Real-Time Chat Application",
+      title: "Smart Todo",
       subTitle: "",
       description:
         "Developed a real-time chat application using WebSockets (Socket.io), Express.js, and MongoDB. Integrated real-time message notifications.",
@@ -224,12 +224,61 @@ export const personalInfo: DataType = {
       gradient: "from-emerald-600 via-teal-600 to-cyan-600",
     },
     {
-      id: 2,
-      title: "Real-Time Chat Application",
+      id: 3,
+      title: "Online Code Editor",
       subTitle: "",
       description:
         "Developed a real-time chat application using WebSockets (Socket.io), Express.js, and MongoDB. Integrated real-time message notifications.",
-      image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg",
+      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+      technologiesUsed: [
+        { name: "React", icon: "⚛️", color: "from-blue-400 to-blue-600" },
+        { name: "Node.js", icon: "🟢", color: "from-green-400 to-green-600" },
+        {
+          name: "MongoDB",
+          icon: "🍃",
+          color: "from-emerald-400 to-emerald-600",
+        },
+        { name: "TypeScript", icon: "📘", color: "from-blue-500 to-blue-700" },
+        { name: "Stripe", icon: "💳", color: "from-purple-400 to-purple-600" },
+        { name: "AWS", icon: "☁️", color: "from-orange-400 to-orange-600" },
+        { name: "Redis", icon: "🔴", color: "from-red-400 to-red-600" },
+        { name: "OpenAI", icon: "🤖", color: "from-green-400 to-teal-500" },
+        { name: "Docker", icon: "🐳", color: "from-blue-400 to-cyan-500" },
+      ],
+      githubLink: "https://github.com/Pratham-D14/online-code-editor",
+      liveLink: "",
+      category: "FullStack",
+      highlights: [
+        {
+          title: "AI Recommendations",
+          description: "Machine learning powered product suggestions",
+          icon: <Cpu className="w-5 h-5" />,
+        },
+        {
+          title: "Real-time Analytics",
+          description: "Live dashboard with business insights",
+          icon: <BarChart3 className="w-5 h-5" />,
+        },
+        {
+          title: "Payment Gateway",
+          description: "Secure multi-payment integration",
+          icon: <Shield className="w-5 h-5" />,
+        },
+        {
+          title: "Mobile Optimized",
+          description: "Progressive web app with offline support",
+          icon: <Smartphone className="w-5 h-5" />,
+        },
+      ],
+      gradient: "from-emerald-600 via-teal-600 to-cyan-600",
+    },
+    {
+      id: 4,
+      title: "Guess The Number",
+      subTitle: "",
+      description:
+        "Developed a real-time chat application using WebSockets (Socket.io), Express.js, and MongoDB. Integrated real-time message notifications.",
+      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
       technologiesUsed: [
         { name: "React", icon: "⚛️", color: "from-blue-400 to-blue-600" },
         { name: "Node.js", icon: "🟢", color: "from-green-400 to-green-600" },
@@ -247,7 +296,7 @@ export const personalInfo: DataType = {
       ],
       githubLink: "https://github.com/username/real-time-chat",
       liveLink: "",
-      category: "",
+      category: "Frontend",
       highlights: [
         {
           title: "AI Recommendations",
