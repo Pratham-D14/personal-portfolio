@@ -12,21 +12,19 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <DataProvider>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-        <Header />
-        <main>
-          <Hero />
-          <Aboutme />
-          <Education />
-          <Experience />
-          {/* <Blog /> */}
-          <Projects />
-          <Interests />
-          <Contact />
-        </main>
-        {/* <Footer /> */}
-      </div>
-    </DataProvider>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <Header />
+      <main>
+        <Hero />
+        <Aboutme />
+        <Education />
+        <Experience />
+        {/* <Blog /> */}
+        <Projects />
+        <Interests />
+        <Contact />
+      </main>
+      {/* <Footer /> */}
+    </div>
   );
 }

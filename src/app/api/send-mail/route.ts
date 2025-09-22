@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 export async function POST(request: Request, res: Response) {
   const { name, email, message, subject } = await request.json();
 
-  if (!name || !email || !message) {
+  if (!name || !email || !message || !subject) {
     return NextResponse.json(
       { error: "All fields are required" },
       { status: 400 }
@@ -26,7 +26,7 @@ export async function POST(request: Request, res: Response) {
     let mailOptions = {
       from: email,
       to: process.env.EMAIL_USER, // your email to receive messages
-      subject: `New Contact from ${name}`,
+      subject: `${subject} from Personal Portfolio`,
       text: `
         Name: ${name}
         Email: ${email}
