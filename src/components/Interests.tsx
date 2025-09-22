@@ -52,7 +52,7 @@ export default function Interests() {
                       ) : interest.icon === "Dumbbell" ? (
                         <Dumbbell className="w-8 h-8" />
                       ) : interest.icon === "GrTechnology" ? (
-                        <GrTechnology className="w-8 h-8" />
+                        <GrTechnology size={32} />
                       ) : null
                     ) : null}
                   </div>
