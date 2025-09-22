@@ -12,7 +12,6 @@ interface highlight {
 }
 
 export type DataType = {
-  _id: string;
   skills: {
     frontendSkills: string[];
     backendSkills: string[];
@@ -67,5 +66,4 @@ export type DataType = {
     title: string;
     description: string;
   }>;
-  __v: number;
 };
