@@ -25,7 +25,7 @@ export async function PUT(request: Request) {
   } catch (error) {
     console.error("Error in PUT /api/personal-info:", error);
     return NextResponse.json(
-      { error: error?.message || "Unknown error" },
+      { error: error instanceof Error ? error.message : "Unknown error" },
       { status: 500 }
     );
   }
