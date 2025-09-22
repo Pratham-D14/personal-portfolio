@@ -1,37 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio (Next.js, MongoDB)
+
+A modern, full-stack developer portfolio built with Next.js (App Router), TypeScript, MongoDB, and Context API. Showcasing my skills, projects, experience, and more.
+
+## Features
+
+- **Next.js 13+ (App Router)** for fast, SEO-friendly pages
+- **TypeScript** for type safety
+- **MongoDB** for dynamic, updatable personal data
+- **Context API** for global state management
+- **Framer Motion** for smooth animations
+- **Modular Components** for easy customization
+- **API routes** for contact form and data fetching
+- **Responsive Design** for all devices
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Pratham-D14/personal-portfolio.git
+cd personal-portfolio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env.local` file in the root directory and add your MongoDB connection string:
+
+```
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database>?retryWrites=true&w=majority
+```
+
+### 4. Seed your personal data
+
+- Edit `personalData.tsx` with your info (for initial seeding)
+- Run the app and use the provided API or script to seed your MongoDB database
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to view your portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio/
+├── public/                # Static assets
+├── src/
+│   ├── app/               # Next.js app directory
+│   ├── components/        # UI components
+│   ├── contexts/          # React Context providers
+│   ├── lib/               # Utility functions, MongoDB connection
+│   ├── models/            # Mongoose models
+│   ├── types/             # TypeScript types
+│   └── ...
+├── personalData.tsx       # Your personal info (for seeding)
+├── .env.local             # Environment variables
+├── package.json
+└── README.md
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+- Update `personalData.tsx` for your skills, experience, projects, etc.
+- Edit components in `src/components/` for layout and style changes.
+- Add new sections or pages as needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Build for production:
+  ```bash
+  npm run build
+  npm start
+  ```
+- Deploy to Vercel, Netlify, or your preferred platform.
 
-## Deploy on Vercel
+## Troubleshooting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **MongoDB connection errors:** Check your `.env.local` and IP whitelist in MongoDB Atlas.
+- **Type errors:** Ensure your data matches the types in `src/types/types.ts`.
+- **API errors:** Check your API route signatures and always return a `Response` or `NextResponse`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# personal-portfolio
+---
+
+**Made with ❤️ by Pratham Darji**
