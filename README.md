@@ -81,7 +81,6 @@ portfolio/
   npm run build
   npm start
   ```
-- Deploy to Vercel, Netlify, or your preferred platform.
 
 ## Troubleshooting
 
