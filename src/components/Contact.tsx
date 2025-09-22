@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -12,10 +12,12 @@ import {
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { Darumadrop_One } from "next/font/google";
+import { Mail, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
+  const [formStatusMessage, setFormStatusMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,8 +26,8 @@ export default function Contact() {
   });
 
   const handleSubmit = (e: React.FormEvent) => {
-    let displayMessage = document.getElementById("mail-message");
     e.preventDefault();
+    setFormStatusMessage("⏱️ Waiting for response...");
     // // Handle form submission
     fetch("/api/send-mail", {
       method: "POST",
@@ -41,10 +43,15 @@ export default function Contact() {
       .then((data) => {
         // Optionally handle success (e.g., show a message
         console.log("Mail sent successfully:", data);
+        setFormStatusMessage(`✅ ${data.message}`);
+        setIsError(false);
+        setFormData({ name: "", email: "", subject: "", message: "" });
       })
       .catch((err) => {
         // Optionally handle error (e.g., show an error message)
         console.error("Error sending mail:", err);
+        setFormStatusMessage(`❌ Something went wrong. Please try again`);
+        setIsError(true);
       });
   };
 
@@ -68,6 +75,15 @@ export default function Contact() {
       href: "#",
     },
   ];
+
+  useEffect(() => {
+    if (formStatusMessage) {
+      const timer = setTimeout(() => {
+        setFormStatusMessage("");
+      }, 5000); // Hide after 5 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [formStatusMessage]);
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -210,7 +226,13 @@ export default function Contact() {
                     />
                   </motion.div>
                   <motion.div>
-                    <p id="mail-message hide"></p>
+                    <p
+                      className={`text-lg font-medium ${
+                        isError ? "text-red-600" : "text-green-600"
+                      }`}
+                    >
+                      {formStatusMessage}
+                    </p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}

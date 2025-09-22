@@ -14,7 +14,10 @@ import DataContext from "@/contexts/DataContext";
 import Link from "next/link";
 
 export default function Education() {
-  const { data } = useContext(DataContext);
+  const { data, loading } = useContext(DataContext);
+  if (loading || !data) {
+    return <div>Loading...</div>;
+  }
   const education = data.education;
   const certifications = data.certification;
 

@@ -10,7 +10,11 @@ import { Card, CardContent } from "./ui/card";
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const { data } = useContext(DataContext);
+  const { data, loading } = useContext(DataContext);
+
+  if (loading || !data) {
+    return <div>Loading...</div>;
+  }
 
   const { frontendSkills, backendSkills, softSkills } = data.skills;
   const skills = [...frontendSkills, ...backendSkills, ...softSkills];
@@ -46,7 +50,8 @@ const About = () => {
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -63,8 +68,9 @@ const About = () => {
         </motion.div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold mb-6">My Journey</h3>
@@ -89,8 +95,9 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <h3 className="text-2xl font-bold mb-6">Skills & Technologies</h3>
@@ -99,13 +106,10 @@ const About = () => {
                 <motion.div
                   key={skill}
                   className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-lg text-center font-medium"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={
-                    isInView
-                      ? { opacity: 1, scale: 1 }
-                      : { opacity: 0, scale: 0.5 }
-                  }
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   {skill}
@@ -121,7 +125,7 @@ const About = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.9, delay: index * 0.4 }}
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-2 mt-10 border-gray-200">
                 <CardContent className="p-6 text-center">

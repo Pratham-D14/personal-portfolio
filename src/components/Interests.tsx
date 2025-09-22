@@ -2,9 +2,16 @@
 import DataContext from "@/contexts/DataContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
+import { GrTechnology } from "react-icons/gr";
+import { Camera, Plane, Book, Dumbbell, Network } from "lucide-react";
 
 export default function Interests() {
-  const { data } = useContext(DataContext);
+  const { data, loading } = useContext(DataContext);
+
+  if (loading || !data) {
+    return <div>Loading...</div>;
+  }
+
   const interests = data.interest;
 
   return (
@@ -33,7 +40,21 @@ export default function Interests() {
               >
                 <div className="group bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2">
                   <div className="text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {interest.icon}
+                    {typeof interest.icon === "string" ? (
+                      interest.icon === "Network" ? (
+                        <Network className="w-8 h-8" />
+                      ) : interest.icon === "Camera" ? (
+                        <Camera className="w-8 h-8" />
+                      ) : interest.icon === "Plane" ? (
+                        <Plane className="w-8 h-8" />
+                      ) : interest.icon === "Book" ? (
+                        <Book className="w-8 h-8" />
+                      ) : interest.icon === "Dumbbell" ? (
+                        <Dumbbell className="w-8 h-8" />
+                      ) : interest.icon === "GrTechnology" ? (
+                        <GrTechnology className="w-8 h-8" />
+                      ) : null
+                    ) : null}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-black">
                     {interest.title}
