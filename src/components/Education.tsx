@@ -185,7 +185,7 @@ export default function Education() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            <h2 className="text-5xl md:text-7xl font-bold text-center mb-16">
               Education & <span className="text-blue-600">Certifications</span>
             </h2>
           </motion.div>
@@ -233,7 +233,7 @@ export default function Education() {
                       </p>
 
                       <div>
-                        <h5 className="font-semibold text-sm mb-2">
+                        <h5 className="font-semibold text-base mb-2">
                           Key Coursework:
                         </h5>
                         <div className="flex flex-wrap gap-2">
@@ -284,7 +284,7 @@ export default function Education() {
                         <div className="flex items-start">
                           <div className="text-3xl mr-4">{cert.icon}</div>
                           <div className="flex-1">
-                            <h4 className="font-bold text-lg mb-0.5">
+                            <h4 className="font-bold text-xl mb-0.5">
                               {cert.name}
                             </h4>
                             <p className="text-blue-500 font-semibold mb-1">

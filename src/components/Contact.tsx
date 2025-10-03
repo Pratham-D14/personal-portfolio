@@ -95,10 +95,10 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Have a project in mind or just want to chat about technology? I'd
             love to hear from you!
           </p>
@@ -146,7 +146,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="p-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl text-white"
             >
-              <h3 className="text-xl font-bold mb-3">
+              <h3 className="text-2xl font-bold mb-3">
                 Let's Build Something Amazing!
               </h3>
               <p className="text-blue-100 leading-relaxed">
@@ -185,7 +185,7 @@ export default function Contact() {
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="bg-white text-black border-gray-300 text-xl"
+                        className="bg-white text-black border-gray-300 text-lg"
                         required
                       />
                     </motion.div>
@@ -197,7 +197,7 @@ export default function Contact() {
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="bg-white text-black border-gray-300 text-xl"
+                        className="bg-white text-black border-gray-300 text-lg"
                         required
                       />
                     </motion.div>
@@ -209,7 +209,7 @@ export default function Contact() {
                       onChange={(e) =>
                         setFormData({ ...formData, subject: e.target.value })
                       }
-                      className="bg-white text-black text-xl border-gray-300"
+                      className="bg-white text-black text-lg border-gray-300"
                       required
                     />
                   </motion.div>
@@ -221,13 +221,13 @@ export default function Contact() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="bg-white text-black text-xl border-gray-300"
+                      className="bg-white text-black text-lg border-gray-300 focus-visible:ring-0"
                       required
                     />
                   </motion.div>
                   <motion.div>
                     <p
-                      className={`text-lg font-medium ${
+                      className={`text-base font-medium ${
                         isError ? "text-red-600" : "text-green-600"
                       }`}
                     >

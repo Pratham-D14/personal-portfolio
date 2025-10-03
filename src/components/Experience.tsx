@@ -73,7 +73,7 @@ export default function Experience() {
               viewport={{ once: true }}
               transition={{ duration: 0.9 }}
             >
-              <p className="text-xl text-gray-600 dark:text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
                 A journey through innovative companies, challenging projects,
                 and continuous growth in the tech industry
               </p>
@@ -172,11 +172,11 @@ export default function Experience() {
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-8">
                         <div className="flex items-start gap-6 mb-6 lg:mb-0">
                           {/* Company Logo */}
-                          <div
+                          {/* <div
                             className={`w-20 h-20 bg-gradient-to-br ${exp.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
                           >
                             {exp.companyLogo}
-                          </div>
+                          </div> */}
 
                           {/* Title & Company */}
                           <div>
@@ -189,7 +189,7 @@ export default function Experience() {
                                 {exp.companyName}
                               </span>
                             </div>
-                            <div className="flex flex-wrap items-center gap-4 text-sm dark:text-gray-600">
+                            <div className="flex flex-wrap items-center gap-4 text-base dark:text-gray-600">
                               <div className="flex items-center gap-2">
                                 <MapPin className="w-4 h-4" />
                                 {exp.location}
@@ -290,7 +290,7 @@ export default function Experience() {
                     </div> */}
                       {/* Responsibilities */}
                       <div className="mb-8">
-                        <h4 className="text-xl font-bold dark:text-gray-900 mb-6 flex items-center gap-3">
+                        <h4 className="text-2xl font-bold dark:text-gray-900 mb-6 flex items-center gap-3">
                           <Target className="w-6 h-6 text-purple-600" />
                           Key Responsibilities
                         </h4>
@@ -311,14 +311,14 @@ export default function Experience() {
 
                       {/* Technologies */}
                       <div className="mb-6">
-                        <h5 className="text-lg font-bold dark:text-gray-900 mb-4">
+                        <h5 className="text-xl font-bold dark:text-gray-900 mb-4">
                           Technologies & Tools
                         </h5>
                         <div className="flex flex-wrap gap-3">
                           {exp.skillsUsed.map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className="px-4 py-2  dark:bg-white/80 backdrop-blur-sm dark:text-gray-700 font-medium rounded-xl border dark:border-gray-200 hover:scale-105 hover:shadow-lg transition-all duration-200 cursor-pointer"
+                              className="px-4 py-2  dark:bg-white/80 backdrop-blur-sm dark:text-gray-700 font-medium rounded-xl border dark:border-gray-200 hover:scale-105 hover:shadow-lg transition-all duration-200"
                             >
                               {tech}
                             </span>
@@ -340,7 +340,7 @@ export default function Experience() {
 
                   {/* Timeline Connector */}
                   {index < experiences.length - 1 && (
-                    <div className="flex justify-center py-8">
+                    <div className="flex justify-center pt-[42px]">
                       <div className="w-1 h-16 bg-gradient-to-b dark:from-gray-300 dark:to-gray-400 rounded-full relative">
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg animate-pulse"></div>
                       </div>

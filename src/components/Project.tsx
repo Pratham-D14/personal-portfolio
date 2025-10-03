@@ -69,11 +69,11 @@ export default function Projects() {
                 </span>
               </div>
 
-              <h2 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r dark:from-gray-900 dark:via-blue-800 dark:to-indigo-900 bg-clip-text text-transparent">
+              <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r dark:from-gray-900 dark:via-blue-800 dark:to-indigo-900 bg-clip-text text-transparent">
                 Projects
               </h2>
 
-              <p className="text-xl dark:text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+              <p className="text-lg md:text-xl dark:text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
                 From idea to execution — A deep dive into the systems I've
                 designed, coded, and deployed using modern web technologies.
               </p>
@@ -112,7 +112,7 @@ export default function Projects() {
                     <div className="p-6">
                       {/* Project Header */}
                       <div className="mb-4">
-                        <h3 className="text-xl font-bold mb-2 dark:text-gray-900 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-2xl font-bold mb-2 dark:text-gray-900 group-hover:text-blue-600 transition-colors">
                           {project.title}
                         </h3>
                         <p className="text-sm font-semibold dark:text-blue-600 mb-2">

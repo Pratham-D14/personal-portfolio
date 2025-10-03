@@ -56,7 +56,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text">
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
               About Me
             </h2>
             {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -135,10 +135,12 @@ const About = () => {
                   >
                     <feature.icon className="w-6 h-6 text-blue-600" />
                   </motion.div>
-                  <h3 className="text-lg font-semibold mb-2">
+                  <h3 className="text-xl font-semibold mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                  <p className="text-gray-600 text-base">
+                    {feature.description}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
